@@ -2,20 +2,15 @@ package controller
 
 import (
 	"fmt"
-	"net/http"
 
-	"github.com/gorilla/mux"
+	"github.com/gofiber/fiber/v2"
 )
 
-func GetName(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	name, ok := vars["name"]
+func GetName(c *fiber.Ctx) error {
+	name := c.Params("name")
 	if name == "" {
 		name = "John Doe"
 	}
-	if !ok {
-		fmt.Println("Erro")
-	}
-
-	w.Write([]byte(fmt.Sprintf("<h1>Hello, %s</h1>", name)))
+	c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
+	return c.SendString(fmt.Sprintf("<h1>Hello %s</h1>", name))
 }
