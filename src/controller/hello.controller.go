@@ -8,9 +8,6 @@ import (
 
 func GetName(c *fiber.Ctx) error {
 	name := c.Params("name")
-	if name == "" {
-		name = "John Doe"
-	}
 	c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
 	return c.SendString(fmt.Sprintf("<h1>Hello %s</h1>", name))
 }
