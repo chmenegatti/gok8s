@@ -8,5 +8,5 @@ namespace: goapp
 
 images:
 - name: goapp
-  newName: chmenegatti/gok8s
+  newName: goapp
   newTag: latest
