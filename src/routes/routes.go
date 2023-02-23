@@ -7,6 +7,6 @@ import (
 )
 
 func Router(app *fiber.App) {
-	app.Get("/", controller.GetName)
+	app.Get("/", controller.HelloWorld)
 	app.Get("/:name", controller.GetName)
 }

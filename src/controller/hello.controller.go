@@ -14,3 +14,8 @@ func GetName(c *fiber.Ctx) error {
 	c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
 	return c.SendString(fmt.Sprintf("<h1>Hello %s</h1>", name))
 }
+
+func HelloWorld(c *fiber.Ctx) error {
+	c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
+	return c.SendString("<h1>Hello World</h1>")
+}
