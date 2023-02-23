@@ -17,5 +17,5 @@ func GetName(c *fiber.Ctx) error {
 
 func HelloWorld(c *fiber.Ctx) error {
 	c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
-	return c.SendString("<h1>Hello World</h1>")
+	return c.SendString("<h1>Hello World do K8s</h1>")
 }
