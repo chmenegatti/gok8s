@@ -9,4 +9,4 @@ namespace: goapp
 images:
 - name: goapp
   newName: chmenegatti/gok8s
-  newTag: c956072e2ba381e6ab2e10bd811452f7e438332b
+  newTag: 13a22b1e148675c65a66f809ae4f3ef8a3a84027
