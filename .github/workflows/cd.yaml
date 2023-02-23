@@ -32,13 +32,13 @@ jobs:
           kustomize_version: v3.6.1
       
       - name: update k8s
-        run:
+        run: |
           cd k8s
           kustomize edit set image goapp=chmenegatti/gok8s:${{ github.sha }}
           cat kustomization.yaml
       
       - name: commit
-        run:
+        run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Deploy Action"
           git commit -am "change image tag"
